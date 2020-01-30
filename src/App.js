@@ -5,9 +5,13 @@ import BottomRow from "./BottomRow";
 
 function App() {
     //TODO: STEP 2 - Establish your applictaion's state with some useState hooks.  You'll need one for the home score and another for the away score.
-    const initialScore = useState(0)
-    const [lionsScore, setScore] = useState(initialScore)
-    const [tigersScore, setScore] = useState(initialScore)
+    // const initialScore = useState(0)
+    const [lionsScore, setLionScore] = useState(0)
+    const [tigersScore, setTigerScore] = useState(0)
+    const onClickHomeTD = () => setLionScore(lionsScore + 7);
+    const onClickHomeFG = () => setLionScore(lionsScore + 3);
+    const onClickAwayTD = () => setTigerScore(tigersScore + 7);
+    const onClickAwayFG = () => setTigerScore(tigersScore + 3);
 
     return (
     <div className="container">
@@ -17,11 +21,6 @@ function App() {
             <h2 className="home__name">Lions</h2>
             
             { /* TODO STEP 3 - We need to change the hardcoded values in these divs to accept dynamic values from our state. */ }
-            const onClickHomeTD = () => setScore(lionsScore + 7);
-            const onClickHomeFG = () => setScore(lionsScore + 3);
-            const onClickAwayTD = () => setScore(tigersScore + 7);
-            const onClickAwayFG = () => setScore(tigersScore + 3);
-            
             <div className="home__score">{lionsScore}</div>
           </div>
           <div className="timer">00: 03</div>
